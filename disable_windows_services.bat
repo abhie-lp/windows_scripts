@@ -62,8 +62,11 @@ REM Phone Service
 sc config PhoneSvc start=disabled
 REM Secondary Logon
 sc config seclogon start=disabled
+
 REM Windows Camera Frame Server
-sc config FrameServer start=disabled
+rem This is required for Windows Camera
+rem sc config FrameServer start=disabled
+
 REM Windows Biometric Service
 sc config WbioSrvc start=disabled
 REM Windows Image Acquisition
@@ -96,8 +99,11 @@ REM Distributed Link Tracking Client
 sc configTrkWks start=disabled
 REM Windows Error Reporting Service
 sc config WerSvc start=disabled
+
 REM Touch Keyboard and Handwriting Panel Service
-sc config TabletInputService start=disabled
+rem This is required for Windows Terminal
+rem sc config TabletInputService start=disabled
+
 REM Enterprise App Management Service
 sc config EntAppSvc start=disabled
 REM Print Spooler
@@ -112,10 +118,15 @@ REM Device Management Enrollment Service
 sc config DmEnrollmentSvc start=disabled
 REM PNRP Machine Name Publication Service
 sc config PNRPAutoReg start=disabled
+
 REM Microsoft Account Sign-in Assistant
-sc config wlidsvc start=disabled
+rem This is required for Windows Store apps
+rem sc config wlidsvc start=disabled
+
 REM ActiveX Installer
 sc config AXInstSV start=disabled
 REM Geolocation Service
 sc config lfsvc start=disabled
 
+REM SysMain Service
+sc config SysMain start=disabled
